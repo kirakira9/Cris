@@ -1,0 +1,141 @@
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+	color: #FFFFFF;
+	background-color: #9d9d9d;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.navbar-fixed-top{
+	border-bottom: 0px;
+}
+
+.btn-xl {  
+    padding: 15px 22px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 6px
+}
+
+.galleryRow{
+	padding: 0;
+	margin: 0;
+}
+
+.galleryRow li{
+	list-style: none;
+	margin-bottom: 25px;
+}
+
+.galleryRow li img{
+	cursor: pointer;
+}
+
+.glyphicon-facebook{
+	background: url('../img/facebook.png') no-repeat;
+}
+
+.media  img{
+	max-width: none;
+}
+
+.carousel{
+	display:none;
+	width: 100%;
+	background-color: grey;
+	z-index: 1;
+}
+
+.affix{
+	top:50px;
+	width: 100%;
+}
+.affix + .container{
+	padding-top: 300px;
+	z-index:-99;
+}
+.affix-top{
+	position: fixed;
+	top: 50px;
+}
+
+.affix-top + .container{
+	padding-top: 300px;
+	z-index: -99;
+}
+
+.jumbotron{
+	background-color: transparent;
+}
+
+.background{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -99;
+	background: url('../img/background.jpg') no-repeat center center fixed;
+	background-size: cover;
+	opacity: 0.7;
+}
+
+.fade{
+	transition: opacity 1s;
+}
+
+.btn.outline {
+    background: none;
+    padding: 12px 22px;
+}
+
+.btn-primary.outline {
+    border: 2px solid #0099cc;
+    color: #0099cc;
+}
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+    color: #33a6cc;
+    border-color: #33a6cc;
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+    border-color: #007299;
+    color: #007299;
+    box-shadow: none;
+}
+
+#subMenuContainer{
+	padding-top:50px;
+	padding-left: 30px;	
+}
+
+#subMenuContainer .nav>li{
+	width: 130px
+}
+
+#subMenuContainer .nav>li>a{
+	color: #767676;
+	font-size: 14px;
+}
+
+#subMenuContainer .nav>li.active{
+	border-color: grey;
+	border-right: 5px solid;
+	
+}
+
+.about  .jumbotron h1{
+	margin-top: 0px;
+}
+
+.thumbnail{
+	display:table !important;
+    border-spacing: 2px !important;
+    border-collapse: separate !important;
+    border-radius:10px !important; 
+}
+.thumbnail_wrapper {
+    display:table-cell !important;
+    vertical-align:middle !important;
+}
+.thumbnail_wrapper > img {
+    width:200px;
+	height: 200px;
+}
