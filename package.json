@@ -1,0 +1,28 @@
+{
+  "name": "cris",
+  "version": "1.0.0",
+  "description": "Test Server",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "formidable": "^1.0.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirakira9/Cris.git"
+  },
+  "keywords": [
+    "Test"
+  ],
+  "author": "Elmo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kirakira9/Cris/issues"
+  },
+  "homepage": "https://github.com/kirakira9/Cris#readme"
+}

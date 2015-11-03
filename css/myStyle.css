@@ -1,13 +1,30 @@
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-	color: #FFFFFF;
-	background-color: #9d9d9d;
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+body{
+	font-family: Open Sans;
+}
+
+.navbar{ /* assigning the top bar to the entire navbar div element */
+    text-align: center;
+    font-weight: bold;
+    box-shadow: inset 0px 3px 10px #9d9d9d; /* initial gray color to the top bar */   
+}
+
+.navbar-inverse .navbar-nav > li:not(.active) > a:hover, .navbar-inverse .navbar-nav > li:not(.active)> a:focus {
+	color: #000;
+	background-color: #EEE;
+	box-shadow: 0 0px 16px 0 rgba(255,255,255,0.5),0 0px 20px 0 rgba(255,255,255,0.4);
 	transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
-.navbar-fixed-top{
-	border-bottom: 0px;
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover{
+	color: #FFF;
+	background-color: #9d9d9d;
+	box-shadow: inset 0px 0px 20px #808080;
 }
+
+.navbar-fixed-top{
+    border-bottom: 10px solid #c2364f;
+}
+
 
 .btn-xl {  
     padding: 15px 22px;
@@ -126,16 +143,56 @@
 }
 
 .thumbnail{
-	display:table !important;
-    border-spacing: 2px !important;
-    border-collapse: separate !important;
-    border-radius:10px !important; 
+	background: transparent;
+	display:table;
+	border: none;
 }
+
 .thumbnail_wrapper {
-    display:table-cell !important;
-    vertical-align:middle !important;
+    display:table-cell;
+    vertical-align:middle;
 }
 .thumbnail_wrapper > img {
-    width:200px;
-	height: 200px;
+    width:100%;
+}
+
+p.list-group-item-text{
+	margin: 0px;
+}
+
+a.list-group-item{
+	padding: 0px;
+}
+a.list-group-item.disabled, a.list-group-item.disabled:focus, a.list-group-item.disabled:hover{
+	color: #000;
+	cursor: default;
+	background-color: #FFF;
+}
+
+a.list-group-item .row{
+	margin:0px;
+}
+
+.contactLogo{
+	height: 80px;
+	width: 80px;
+	background-color: red;
+}
+
+.contactContent{
+	height: 80px;
+
+}
+
+.red{
+	background-color: #FC6E51;
+}
+.blue{
+	background-color: #4FC1E9;
+}
+.green{
+	background-color: #A0D468;
+}
+.yellow{
+	background-color: #FFCE54;
 }
