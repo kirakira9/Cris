@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Test Server",
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "main": "index.js",
   "dependencies": {
