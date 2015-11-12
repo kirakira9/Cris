@@ -2,27 +2,24 @@ body{
 	font-family: Open Sans;
 }
 
+.wrapper{
+	position: relative;
+	top: 60px;
+}
+
 .navbar{ /* assigning the top bar to the entire navbar div element */
     text-align: center;
     font-weight: bold;
     box-shadow: inset 0px 3px 10px #9d9d9d; /* initial gray color to the top bar */   
+	margin: 0px;
 }
 
-.navbar-inverse .navbar-nav > li:not(.active) > a:hover, .navbar-inverse .navbar-nav > li:not(.active)> a:focus {
-	color: #000;
-	background-color: #EEE;
-	box-shadow: 0 0px 16px 0 rgba(255,255,255,0.5),0 0px 20px 0 rgba(255,255,255,0.4);
-	transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-}
-
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover{
-	color: #FFF;
-	background-color: #9d9d9d;
-	box-shadow: inset 0px 0px 20px #808080;
+.navbar-default .navbar-nav>.active>a{
+	background-color: #434A54;
 }
 
 .navbar-fixed-top{
-    border-bottom: 10px solid #c2364f;
+    border-bottom: 10px solid #434A54;
 }
 .navbar-toggle {
 	border: none;
@@ -85,11 +82,23 @@ body{
 	max-width: none;
 }
 
+#myCarousel{
+	top: 60px;
+}
+
 .carousel{
+	position: fixed;
 	display:none;
 	width: 100%;
 	background-color: grey;
 	z-index: 1;
+}
+.carousel-inner{
+	width: 100%;
+	max-height: 300px;
+}
+.carousel-inner > .item > img {
+	max-height: 300px;
 }
 
 .affix{
@@ -211,7 +220,10 @@ a.list-group-item .row{
 
 .contactContent{
 	height: 80px;
-
+	line-height:80px;
+}
+.list-group-item-heading{
+	line-height: 40px;
 }
 
 .red{
@@ -225,4 +237,151 @@ a.list-group-item .row{
 }
 .yellow{
 	background-color: #FFCE54;
+}
+
+.VerseDarkGrey{
+	color: #434A54;
+}
+
+.VerseMediumGrey{
+	color: #AAB2BD;	
+}
+
+
+.active > .RedBtn{
+	color: #d9534f !important;
+}
+
+.RedBtn:hover{
+	color: #f8f8f8 !important;
+	background-color: #d9534f !important;
+	box-shadow: inset 0px 5px 5px 0px #ed5565;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.active > .OrangeBtn{
+	color: #fa6800 !important;
+}
+
+.OrangeBtn:hover{
+	color: #f8f8f8 !important;
+	background-color: #fa6800 !important;
+	box-shadow: inset 0px 5px 5px 0px #f0a30a;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.active > .YellowBtn{
+	color: #f6bb42 !important;
+}
+
+.YellowBtn:hover{
+	color: #f8f8f8 !important;
+	background-color: #f6bb42 !important;
+	box-shadow: inset 0px 5px 5px 0px #ffce54;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.active > .BlueBtn{
+	color: #428bca !important;
+}
+
+.BlueBtn:hover{
+	color: #f8f8f8 !important;
+	background-color: #428bca !important;
+	box-shadow: inset 0px 5px 5px 0px #5d9cec;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.active > .GreenBtn{
+	color: #5cb85c !important;
+}
+
+.GreenBtn:hover{
+	color: #f8f8f8 !important;
+	background-color: #5cb85c !important;
+	box-shadow: inset 0px 5px 5px 0px #a0d468;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.active > .PurpleBtn{
+	color: #d770ad !important;
+}
+
+.PurpleBtn:hover{
+	color: #f8f8f8 !important;
+	background-color: #d770ad !important;
+	box-shadow: inset 0px 5px 5px 0px #ec87c0;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 3px solid #eee;
+    border-left-width: 0px;
+	border-right-width: 0px;
+    border-radius: 3px;
+}
+.bs-callout h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.bs-callout p:last-child {
+    margin-bottom: 0;
+}
+.bs-callout code {
+    border-radius: 3px;
+}
+.bs-callout+.bs-callout {
+    margin-top: -5px;
+}
+.bs-callout-default {
+    border-top-color: #777;
+	border-bottom-color: #777;
+}
+.bs-callout-default h2 {
+    color: #777;
+}
+.bs-callout-primary {
+    border-top-color: #428bca;
+	border-bottom-color: #428bca;
+}
+.bs-callout-primary h2 {
+    color: #428bca;
+}
+.bs-callout-success {
+    border-top-color: #5cb85c;
+	border-bottom-color: #5cb85c;
+}
+.bs-callout-success h2 {
+    color: #5cb85c;
+}
+.bs-callout-danger {
+    border-top-color: #d9534f;
+	border-bottom-color: #d9534f;
+}
+.bs-callout-danger h2{
+    color: #d9534f;
+}
+.bs-callout-warning {
+    border-top-color: #f0ad4e;
+	border-bottom-color: #f0ad4e;
+}
+.bs-callout-warning h2 {
+    color: #f0ad4e;
+}
+.bs-callout-info {
+    border-top-color: #5bc0de;
+	border-bottom-color: #5bc0de;
+}
+.bs-callout-info h2 {
+    color: #5bc0de;
+}
+
+.bs-callout-purple{
+	border-top-color: #d770ad;
+	border-bottom-color: #d770ad;
+}
+.bs-callout-purple h2{
+	color: #d770ad;
 }
