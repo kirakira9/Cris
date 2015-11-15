@@ -31,53 +31,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
-				<span class="icon-bar top-bar"></span>
-				<span class="icon-bar middle-bar"></span>
-				<span class="icon-bar bottom-bar"></span> 
-			  </button>
-			  <a class="navbar-brand" href="#">Jesus's Magician</a>
-			</div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="menu">
-				<ul class="nav navbar-nav">
-					<li class="active">
-						<a href="/home">Home</a>
-					</li>
-					<li>
-						<a href="/about">About</a>
-					</li>
-					<li>
-						<a href="/services">Services</a>
-					</li>
-					<li>
-						<a href="/partners">Partners</a>
-					</li>
-					<li>
-						<a href="/galleries">Galleries</a>
-					</li>
-					<li>
-						<a href="/contact">Contact</a>
-					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li class="nav-divider"></li>
-					<li><a href="#">繁</a></li>
-					<li class="active"><a href="#">Eng</a></li>
-				</ul>
-			</div>
-			
-			<!-- /.navbar-collapse -->
-		</div>
-        <!-- /.container -->
-		
-    </nav>
-
+	<div id="header" style="height:60px;"></div>
     <!-- Half Page Image Background Carousel Header -->
     <header id="myCarousel" class="carousel slide" >
 		<!-- Indicators -->
@@ -91,23 +45,20 @@
 		<div class="carousel-inner">
 			<div class="item active">
 				<!-- Set the first background image using inline CSS below. -->
-				<img src="img/demo_banner.jpg" class="img-responsive"/>
+				<img src="img/test_banner.png" class="img-responsive"/>
 				<div class="carousel-caption">
-					<h2>Slide 1</h2>
 				</div>
 			</div>
 			<div class="item">
 				<!-- Set the second background image using inline CSS below. -->
-				<img src="img/banner.png" />
+				<img src="img/test_banner.png" class="img-responsive"/>
 				<div class="carousel-caption">
-					<h2>Slide 2</h2>
 				</div>
 			</div>
 			<div class="item">
 				<!-- Set the third background image using inline CSS below. -->
-				<img src="img/banner.png" />
+				<img src="img/test_banner.png" class="img-responsive" />
 				<div class="carousel-caption">
-					<h2>Slide 3</h2>
 				</div>
 			</div>
 		</div>
@@ -119,66 +70,21 @@
 		<a class="right carousel-control" href="#myCarousel" data-slide="next">
 			<span class="icon-next"></span>
 		</a>
-
 	</header>
 	
     <!-- Page Content -->
     <div class="container fade">
 	   <br />
-       <div class="jumbotron">
-			<h1>Some Slogan</h1>
-			<p>Some secondary slogan</p>
-			<div class="media">
-				<div class="media-left">
-					<a href="./about.html">
-						<img class="media-object img-thumbnail" src="./img/200x200.jpg" />
-					</a>
-				</div>
-				<div class="media-body">
-					<p><b>Slogan for attracting people to click Introduction</b></p>
-					<p>Text for attracting people to click Introduction</p>
-				</div>
-			</div>
-			<div class="media">
-				<div class="media-body">
-					<p><b>Slogan for attracting people to click Service</b></p>
-					<p>Text for attracting people to click Service</p>
-				</div>
-				<div class="media-right">
-					<a href="./services.html">
-						<img class="media-object img-thumbnail" src="./img/200x200.jpg" />
-					</a>
-				</div>
-			</div>
-			<div class="media">
-				<div class="media-left">
-					<a href="./galleries.html">
-						<img class="media-object img-thumbnail" src="./img/200x200.jpg" />
-					</a>
-				</div>
-				<div class="media-body">
-					<p><b>Slogan for attracting people to click Gallery</b></p>
-					<p>Text for attracting people to click Gallery</p>
-				</div>
-			</div>
-			<hr />
-			<a class="btn btn-primary outline btn-xl col-lg-4" href="/contact" role="button">Contact Me</a>
-			<br />
-	   </div>
-
-        <!-- Footer -->
-        <footer>
-			<hr />
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Jesus's Magician 2015</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
+		<div id="block1"></div>
+		<br />
+		<div id="block2"></div>
+		<br />
+		<div id="block3"></div>
+		<hr />
+		<div id="footer"></div>
 
     </div>
-	<div class="background"></div>
+	<div class="background fade"></div>
     <!-- /.container -->
 
     <!-- jQuery -->
@@ -188,7 +94,159 @@
     <script src="js/bootstrap.min.js"></script>
 	
 	<script src="js/myScript.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.1/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+	<script type="text/babel">
+		var verseList = [
+			{ book: "Psalm 23:4", verse: "Even though I walk through the darkest valley, I will fear no evil, for you are with me"},
+			{ book: "Matthew 24:36", verse: "But about that day or hour no one knows, not even the angels in heaven, nor the Son, but only the Father"},
+			{ book: "John 15:24", verse: " If I had not done among them the works no one else did, they would not be guilty of sin"}
+		];
 
+		var ThumbNail = React.createClass({
+			render: function(){
+				return (<a href={this.props.data.bigURL} title={this.props.data.title} data-gallery=""><img src={this.props.data.smallURL} /></a>);
+			}
+		});
+		var randomVerseID = Math.floor((Math.random()*verseList.length));
+
+		var ThumbNailList = React.createClass({
+			render: function(){
+				var galleryList = this.props.data.map(function(gallery){
+					return (<ThumbNail data={gallery} />);
+				});				
+				return (
+					<div>{galleryList}</div>
+				);
+			}
+		});
+
+		var CollapseBtn = React.createClass({
+			render: function(){
+				return (
+					<div className="navbar-header">
+						<button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+							<span className="icon-bar top-bar"></span>
+							<span className="icon-bar middle-bar"></span>
+							<span className="icon-bar bottom-bar"></span>
+						</button>
+						<a className="navbar-brand" href="#"><img src="./img/facebook.png" /></a>
+					</div>
+				);
+			}
+		});
+		var Menu = React.createClass({
+			render: function(){
+				return(
+					<div className="collapse navbar-collapse" id="menu">
+						<ul className="nav navbar-nav">
+							<li className={this.props.activeTag=='home'? 'active': ''}>
+								<a className="RedBtn" href="/home">Home</a>
+							</li>
+							<li className={this.props.activeTag=='about'? 'active': ''}>
+								<a className="OrangeBtn" href="/about">About</a>
+							</li>
+							<li className={this.props.activeTag=='service'? 'active': ''}>
+								<a className="YellowBtn" href="/services">Services</a>
+							</li>
+							<li className={this.props.activeTag=='partner'? 'active': ''}>
+								<a className="GreenBtn" href="/partners">Partners</a>
+							</li>
+							<li className={this.props.activeTag=='gallery'? 'active': ''}>
+								<a className="BlueBtn" href="/galleries">Galleries</a>
+							</li>
+							<li className={this.props.activeTag=='contact'? 'active': ''}>
+								<a className="PurpleBtn" href="/contact">Contact</a>
+							</li>
+						</ul>
+						<ul className="nav navbar-nav navbar-right">
+							<li className="nav-divider"></li>
+							<li><a href="#">繁</a></li>
+							<li><a href="#">Eng</a></li>
+						</ul>
+					</div>
+				);
+			}
+		});
+
+		var HomeBlock = React.createClass({
+			render: function(){
+				return (
+					<div className="row">
+						<div className="col-md-4 text-center">
+							<img className="img-thumbnail" src={this.props.imgSrc} />
+						</div>
+						<div className="col-md-8">
+							<h3><strong>{this.props.blockHeader}</strong></h3>
+							<p>{this.props.blockContent}</p>
+						</div>
+					</div>
+				);
+			}
+		});
+		
+		var Title = React.createClass({
+			render: function(){
+				return (
+					<div className={this.props.cssClass}>
+						<h2>{this.props.title}</h2>
+					</div>
+				);
+			}
+		});
+
+		var Header = React.createClass({
+			render: function(){
+				return(
+					<nav className="navbar navbar-default navbar-fixed-top" role="navigation">
+						<div className="container">
+							<CollapseBtn />
+							<Menu activeTag={this.props.activeTag}/>
+						</div>
+					</nav>
+				);
+			}
+		});
+
+		var Footer = React.createClass({
+			render: function(){
+				return (
+					<footer>
+						<div className="row">
+							<div className="col-xs-12">
+								<p className="VerseDarkGrey"><strong>Copyright &copy;</strong> Jesus Magician 2015</p>
+								<p className="VerseMediumGrey"><strong>{this.props.data.book}</strong> <cite>{this.props.data.verse}</cite></p>
+							</div>
+						</div>
+					</footer>
+				);
+			}
+		});
+
+		ReactDOM.render(
+			<HomeBlock imgSrc="./img/200x200.jpg" blockHeader="Header for Block 1" blockContent="Some content / slogan to attract people click the image, and redirect to Introduction Page"/>,
+			document.getElementById('block1')
+		);
+		ReactDOM.render(
+			<HomeBlock imgSrc="./img/200x200.jpg" blockHeader="Header for Block 2" blockContent="Some content / slogan to attract people click the image, and redirect to Service Page"/>,
+			document.getElementById('block2')
+		);
+		ReactDOM.render(
+			<HomeBlock imgSrc="./img/200x200.jpg" blockHeader="Header for Block 3" blockContent="Some content / slogan to attract people click the image, and redirect to Gallery Page"/>,
+			document.getElementById('block3')
+		);
+		ReactDOM.render(
+			<Header activeTag="home" />,
+			document.getElementById('header')
+		);
+
+		ReactDOM.render(
+			<Footer data={verseList[randomVerseID]}/>,
+			document.getElementById('footer')
+		);
+	</script>
+	<script src="js/myScript.js"></script>
 </body>
 
 </html>

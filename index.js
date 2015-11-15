@@ -17,6 +17,10 @@ app.get('/about', function(req,res){
 	res.sendFile('/about.html', {root:__dirname});
 });
 
+app.get('/services', function(req,res){
+	res.sendFile('/services.html', {root:__dirname});
+});
+
 app.get('/contact', function(req,res){
 	res.sendFile('/contact.html', {root:__dirname});
 });

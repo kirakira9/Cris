@@ -1,99 +1,53 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+
     <title>Jesus's Magician</title>
+
     <!-- Bootstrap Core CSS -->
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/blueimp-gallery.min.css" rel="stylesheet">
-    <link href="css/bootstrap-image-gallery.min.css" rel="stylesheet">
 	<link href="css/myStyle.css" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
+
 <body>
-    <!-- Navigation -->
     <div id="header" style="height: 60px;"></div>
-    <!-- Half Page Image Background Carousel Header -->
-    <!-- Page Content -->
-     <div class="container fade">
+    <div class="container fade">
 		<br />
 		<div class="row">
 			<div id="title"></div>
-			<div id="links"><div></div></div>
+			<div id="content"></div>
+				
+        <!-- Footer -->
+			<hr />
+			<div id="footer"></div>
 		</div>
-		
-		<hr/>
-		<!-- Footer -->
-		<div id="footer"></div>	
     </div>
-	<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-use-bootstrap-modal="false">
-    <!-- The container for the modal slides -->
-		<div class="slides"></div>
-		<!-- Controls for the borderless lightbox -->
-		<h3 class="title"></h3>
-		<a class="prev">‹</a>
-		<a class="next">›</a>
-		<a class="close">×</a>
-		<a class="play-pause"></a>
-		<ol class="indicator"></ol>
-		<!-- The modal dialog, which will be used to wrap the lightbox content -->
-		<div class="modal fade">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" aria-hidden="true">&times;</button>
-						<h4 class="modal-title"></h4>
-					</div>
-					<div class="modal-body next"></div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default pull-left prev">
-							<i class="glyphicon glyphicon-chevron-left"></i>
-							Previous
-						</button>
-						<button type="button" class="btn btn-primary next">
-							Next
-							<i class="glyphicon glyphicon-chevron-right"></i>
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-    <div class="background fade"></div>
-  
+	<div class="background fade"></div>
+    <!-- /.container -->
+
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.blueimp-gallery.min.js"></script>
-    <script src="js/bootstrap-image-gallery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.1/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.1/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-    <script src="js/myScript.js"></script>
+	<script src="js/myScript.js"></script>
 	<script type="text/babel">
-		var galleryData = [
-				{ smallURL: "./img/gallery/1_s.jpg", bigURL: "./img/gallery/1_b.jpg" ,title: "Nothing Gold Can Stay"},
-				{ smallURL: "./img/gallery/2_s.jpg", bigURL: "./img/gallery/2_b.jpg" , title: "Nothing Gold Can Stay"},
-				{ smallURL: "./img/gallery/3_s.jpg", bigURL: "./img/gallery/3_b.jpg" , title: "Nothing Gold Can Stay"},
-				{ smallURL: "./img/gallery/4_s.jpg", bigURL: "./img/gallery/4_b.jpg" , title: "Nothing Gold Can Stay"},
-				{ smallURL: "./img/gallery/5_s.jpg", bigURL: "./img/gallery/5_b.jpg" , title: "Nothing Gold Can Stay"},
-				{ smallURL: "./img/gallery/6_s.jpg", bigURL: "./img/gallery/6_b.jpg" , title: "Nothing Gold Can Stay"}, 
-				{ smallURL: "./img/gallery/7_s.jpg", bigURL: "./img/gallery/7_b.jpg" , title: "Nothing Gold Can Stay"},
-				{ smallURL: "./img/gallery/8_s.jpg", bigURL: "./img/gallery/8_b.jpg" , title: "Nothing Gold Can Stay"},
-				{ smallURL: "./img/gallery/9_s.jpg", bigURL: "./img/gallery/9_b.jpg" , title: "Nothing Gold Can Stay"},
-				{ smallURL: "https://farm6.static.flickr.com/5650/22151329006_9d32e48fe9_s.jpg", bigURL: "https://farm6.static.flickr.com/5650/22151329006_9d32e48fe9_b.jpg", title: "Nothing Gold Can Stay" },
-				{ smallURL: "https://farm6.static.flickr.com/5650/22151329006_9d32e48fe9_s.jpg", bigURL: "https://farm6.static.flickr.com/5650/22151329006_9d32e48fe9_b.jpg", title: "Nothing Gold Can Stay"}
-		];
-
 		var verseList = [
 			{ book: "Psalm 23:4", verse: "Even though I walk through the darkest valley, I will fear no evil, for you are with me"},
 			{ book: "Matthew 24:36", verse: "But about that day or hour no one knows, not even the angels in heaven, nor the Son, but only the Father"},
@@ -205,16 +159,12 @@
 		});
 
 		ReactDOM.render(
-			<ThumbNailList data={galleryData} />,
-			document.getElementById('links')
-		);		
-		ReactDOM.render(
-			<Title cssClass="bs-callout bs-callout-primary" title="Gallery" />,
+			<Title cssClass="bs-callout bs-callout-warning" title="Services" />,
 			document.getElementById('title')
 		);
 		
 		ReactDOM.render(
-			<Header activeTag="gallery" />,
+			<Header activeTag="service" />,
 			document.getElementById('header')
 		);
 
@@ -223,5 +173,7 @@
 			document.getElementById('footer')
 		);
 	</script>
+
 </body>
+
 </html>
