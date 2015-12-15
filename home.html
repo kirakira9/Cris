@@ -10,11 +10,7 @@
     <meta name="author" content="">
 
     <title>Jesus's Magician</title>
-
-    <!-- Bootstrap Core CSS -->
-	 
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
-  
+	<link rel="icon" href="img/icon.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
 	<link href="css/myStyle.css" rel="stylesheet">
@@ -31,60 +27,50 @@
 <body>
 
     <!-- Navigation -->
-	<div id="header" style="height:60px;"></div>
+	<div id="subHeader"></div>
+	<div id="header"></div>
     <!-- Half Page Image Background Carousel Header -->
-    <header id="myCarousel" class="carousel slide" >
-		<!-- Indicators -->
-		<ol class="carousel-indicators">
-			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			<li data-target="#myCarousel" data-slide-to="1"></li>
-			<li data-target="#myCarousel" data-slide-to="2"></li>
-		</ol>
+	<div class="container fade">
+		<header id="myCarousel" class="carousel slide hidden-xs hidden-sm" data-interval="3000">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
 
-		<!-- Wrapper for Slides -->
-		<div class="carousel-inner">
-			<div class="item active">
-				<!-- Set the first background image using inline CSS below. -->
-				<img src="img/test_banner.png" class="img-responsive"/>
-				<div class="carousel-caption">
+			<!-- Wrapper for Slides -->
+			<div class="carousel-inner">
+				<div class="item active billboard1">
+				</div>
+				<div class="item billboard2">
+				</div>
+				<div class="item billboard3">
 				</div>
 			</div>
-			<div class="item">
-				<!-- Set the second background image using inline CSS below. -->
-				<img src="img/test_banner.png" class="img-responsive"/>
-				<div class="carousel-caption">
-				</div>
-			</div>
-			<div class="item">
-				<!-- Set the third background image using inline CSS below. -->
-				<img src="img/test_banner.png" class="img-responsive" />
-				<div class="carousel-caption">
-				</div>
-			</div>
-		</div>
 
-		<!-- Controls -->
-		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-			<span class="icon-prev"></span>
-		</a>
-		<a class="right carousel-control" href="#myCarousel" data-slide="next">
-			<span class="icon-next"></span>
-		</a>
-	</header>
+			<!-- Controls -->
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="icon-prev"></span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next">
+				<span class="icon-next"></span>
+			</a>
+		</header>
 	
     <!-- Page Content -->
-    <div class="container fade">
+    
 	   <br />
-		<div id="block1"></div>
+		<div id="blockRow" class="row">
+			<a id="introBlock" href="/about" class="homeBlock"></a>
+			<a id="serviceBlock" href="/services" class="homeBlock"></a>
+			<a id="galleryBlock" href="/galleries" class="homeBlock"></a>
+		</div>
 		<br />
-		<div id="block2"></div>
-		<br />
-		<div id="block3"></div>
-		<hr />
-		<div id="footer"></div>
-
     </div>
-	<div class="background fade"></div>
+	<div id="divider"></div>
+	<br/>
+	<div id="footer"></div>
     <!-- /.container -->
 
     <!-- jQuery -->
@@ -131,7 +117,6 @@
 							<span className="icon-bar middle-bar"></span>
 							<span className="icon-bar bottom-bar"></span>
 						</button>
-						<a className="navbar-brand" href="#"><img src="./img/facebook.png" /></a>
 					</div>
 				);
 			}
@@ -144,26 +129,26 @@
 							<li className={this.props.activeTag=='home'? 'active': ''}>
 								<a className="RedBtn" href="/home">Home</a>
 							</li>
+							<li className="menuDivider" />
 							<li className={this.props.activeTag=='about'? 'active': ''}>
 								<a className="OrangeBtn" href="/about">About</a>
 							</li>
+							<li className="menuDivider" />
 							<li className={this.props.activeTag=='service'? 'active': ''}>
 								<a className="YellowBtn" href="/services">Services</a>
 							</li>
+							<li className="menuDivider" />
 							<li className={this.props.activeTag=='partner'? 'active': ''}>
 								<a className="GreenBtn" href="/partners">Partners</a>
 							</li>
+							<li className="menuDivider" />
 							<li className={this.props.activeTag=='gallery'? 'active': ''}>
 								<a className="BlueBtn" href="/galleries">Galleries</a>
 							</li>
+							<li className="menuDivider" />
 							<li className={this.props.activeTag=='contact'? 'active': ''}>
 								<a className="PurpleBtn" href="/contact">Contact</a>
 							</li>
-						</ul>
-						<ul className="nav navbar-nav navbar-right">
-							<li className="nav-divider"></li>
-							<li><a href="#">繁</a></li>
-							<li><a href="#">Eng</a></li>
 						</ul>
 					</div>
 				);
@@ -173,14 +158,7 @@
 		var HomeBlock = React.createClass({
 			render: function(){
 				return (
-					<div className="row">
-						<div className="col-md-4 text-center">
-							<img className="img-thumbnail" src={this.props.imgSrc} />
-						</div>
-						<div className="col-md-8">
-							<h3><strong>{this.props.blockHeader}</strong></h3>
-							<p>{this.props.blockContent}</p>
-						</div>
+					<div className="col-md-4" id={this.props.id}>
 					</div>
 				);
 			}
@@ -214,8 +192,8 @@
 				return (
 					<footer>
 						<div className="row">
-							<div className="col-xs-12">
-								<p className="VerseDarkGrey"><strong>Copyright &copy;</strong> Jesus Magician 2015</p>
+							<div className="col-xs-12 text-right">
+								<p className="VerseDarkGrey">Copyright &copy; Jesus Magician Reserved</p>
 								<p className="VerseMediumGrey"><strong>{this.props.data.book}</strong> <cite>{this.props.data.verse}</cite></p>
 							</div>
 						</div>
@@ -224,18 +202,7 @@
 			}
 		});
 
-		ReactDOM.render(
-			<HomeBlock imgSrc="./img/200x200.jpg" blockHeader="Header for Block 1" blockContent="Some content / slogan to attract people click the image, and redirect to Introduction Page"/>,
-			document.getElementById('block1')
-		);
-		ReactDOM.render(
-			<HomeBlock imgSrc="./img/200x200.jpg" blockHeader="Header for Block 2" blockContent="Some content / slogan to attract people click the image, and redirect to Service Page"/>,
-			document.getElementById('block2')
-		);
-		ReactDOM.render(
-			<HomeBlock imgSrc="./img/200x200.jpg" blockHeader="Header for Block 3" blockContent="Some content / slogan to attract people click the image, and redirect to Gallery Page"/>,
-			document.getElementById('block3')
-		);
+	
 		ReactDOM.render(
 			<Header activeTag="home" />,
 			document.getElementById('header')

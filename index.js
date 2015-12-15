@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var http = require('http');
+var fh = require('./readContent.js');
 
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8080);
 app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
@@ -10,6 +11,7 @@ app.get('/', function(req,res){
 });
 
 app.get('/home', function(req,res){
+	console.log(fh.getHomeContent('./files/test.txt'));
 	res.sendFile('/home.html', {root:__dirname});
 });
 

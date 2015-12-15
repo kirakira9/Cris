@@ -9,12 +9,13 @@ $(function(){
 	}
 	
 	$('.carousel').carousel({
-        interval: 5000 //changes the speed
+        interval: 3000 //changes the speed
     });
 	setTimeout(function(){	
 		$("li.active > a").click(function(e){
 			e.preventDefault();
 		});
 	}, 500);
+	
 });
 
