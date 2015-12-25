@@ -24,40 +24,47 @@
 
 </head>
 
-<body>
+<body style="background: none;">
 
     <!-- Navigation -->
 	<div id="subHeader"></div>
+	<div id="subHeaderMenu" class="hidden-xs hidden-sm">
+		<a id="headerToggleLang" class="subHeaderMenuItem"></a>
+		<a id="headerEmail" href="mailto:magiciancris@ymail.com" class="subHeaderMenuItem"></a>
+		<a id="headerFB" href="https://www.facebook.com/Jesusmagician/" class="subHeaderMenuItem"></a>
+	</div>
 	<div id="header"></div>
     <!-- Half Page Image Background Carousel Header -->
 	<div class="container fade">
-		<header id="myCarousel" class="carousel slide hidden-xs hidden-sm" data-interval="3000">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>
+		<div id="carouselContainer" class="hidden-xs hidden-sm">
+			<header id="myCarousel" class="carousel slide" data-interval="3000">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>
 
-			<!-- Wrapper for Slides -->
-			<div class="carousel-inner">
-				<div class="item active billboard1">
+				<!-- Wrapper for Slides -->
+				<div class="carousel-inner">
+					<div class="item active billboard1">
+					</div>
+					<div class="item billboard2">
+					</div>
+					<div class="item billboard3">
+					</div>
 				</div>
-				<div class="item billboard2">
-				</div>
-				<div class="item billboard3">
-				</div>
-			</div>
 
-			<!-- Controls -->
-			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-				<span class="icon-prev"></span>
-			</a>
-			<a class="right carousel-control" href="#myCarousel" data-slide="next">
-				<span class="icon-next"></span>
-			</a>
-		</header>
-	
+				<!-- Controls -->
+				<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+					<span class="icon-prev"></span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" data-slide="next">
+					<span class="icon-next"></span>
+				</a>
+			</header>
+			<div id="layerOverCarousel"></div>
+		</div>
     <!-- Page Content -->
     
 	   <br />
@@ -129,23 +136,23 @@
 							<li className={this.props.activeTag=='home'? 'active': ''}>
 								<a className="RedBtn" href="/home">Home</a>
 							</li>
-							<li className="menuDivider" />
-							<li className={this.props.activeTag=='about'? 'active': ''}>
-								<a className="OrangeBtn" href="/about">About</a>
+							<li className="menuDivider hidden-xs" />
+							<li className={this.props.activeTag=='intro'? 'active': ''}>
+								<a className="OrangeBtn" href="/about">Intro</a>
 							</li>
-							<li className="menuDivider" />
+							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='service'? 'active': ''}>
 								<a className="YellowBtn" href="/services">Services</a>
 							</li>
-							<li className="menuDivider" />
+							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='partner'? 'active': ''}>
 								<a className="GreenBtn" href="/partners">Partners</a>
 							</li>
-							<li className="menuDivider" />
+							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='gallery'? 'active': ''}>
 								<a className="BlueBtn" href="/galleries">Galleries</a>
 							</li>
-							<li className="menuDivider" />
+							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='contact'? 'active': ''}>
 								<a className="PurpleBtn" href="/contact">Contact</a>
 							</li>

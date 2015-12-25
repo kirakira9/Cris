@@ -10,11 +10,11 @@
     <meta name="author" content="">
 
     <title>Jesus's Magician</title>
-
-    <!-- Bootstrap Core CSS -->
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+	<link rel="icon" href="img/icon.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
 	<link href="css/myStyle.css" rel="stylesheet">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,20 +26,86 @@
 </head>
 
 <body>
-    <div id="header" style="height: 60px;"></div>
-    <div class="container fade">
-		<br />
-		<div class="row">
-			<div id="title"></div>
-			<div id="content"></div>
-				
-        <!-- Footer -->
-			<hr />
-			<div id="footer"></div>
+
+    <!-- Navigation -->
+	<div id="subHeader"></div>
+	<div id="subHeaderMenu" class="hidden-xs hidden-sm">
+		<a id="headerToggleLang" class="subHeaderMenuItem"></a>
+		<a id="headerEmail" href="mailto:magiciancris@ymail.com" class="subHeaderMenuItem"></a>
+		<a id="headerFB" href="https://www.facebook.com/Jesusmagician/" class="subHeaderMenuItem"></a>
+	</div>
+	<div id="header"></div>
+	
+ <!-- Half Page Image Background Carousel Header -->
+ 
+	<div class="container fade">
+		<div id="serviceBanner" class="hidden-xs hidden-sm"></div>
+		<div id="serviceContent">
+			<h1 class="text-right hidden-xs">LIST FOR PARTY / ANNUAL DINNER</h1>
+			<div class="row">
+				<div class="serviceBlock col-xs-9 col-sm-3 col-lg-3">
+					<div>
+						<p><b>Magic<br>Performance</b></p>
+						<ul>
+							<li>Close up</li>
+							<li>Parlor</li>
+							<li>Stage</li>
+						</ul>
+					</div>
+				</div>
+				<div class="serviceBlock col-xs-9 col-sm-3 col-lg-3">
+					<div>
+						<p><b>Balloon</b></p>
+						<ul>
+							<li>Twisting</li>
+							<li>Decoration</li>
+						</ul>
+					</div>
+				</div>
+				<div class="serviceBlock col-xs-9 col-sm-3 col-lg-3">
+					<div>
+						<p><b>Juggle<br>Performance</b></p>
+					</div>
+				</div>
+				<div class="serviceBlock col-xs-9 col-sm-3 col-lg-3">
+					<div>
+						<p><b>Face<br>painting</b></p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="serviceBlock col-xs-9 col-sm-3 col-lg-3">
+					<div>
+						<p><b>MC<br>service</b></p>
+					</div>
+				</div>
+				<div class="serviceBlock col-xs-9 col-sm-3 col-lg-3">
+					<div>
+						<p><b>Live Band<br>(Annual Dinner)</b></p>
+					</div>
+				</div>
+				<div class="serviceBlock col-xs-9 col-sm-3 col-lg-3">
+					<div>
+						<p><b>Rental</b></p>
+						<ul>
+							<li>Popcorn<br>Machine</li>
+						</ul>
+					</div>
+				</div>
+				<div class="serviceBlock col-xs-9 col-sm-3 col-lg-3">
+					<div>
+						<p><b>Photograph<br>Shooting</b></p>
+					</div>
+				</div>
+			</div>
 		</div>
-    </div>
-	<div class="background fade"></div>
-    <!-- /.container -->
+	</div>
+	<br/>
+	<div id="divider"></div>
+	<br/>
+	<div id="footer"></div>
+	<!-- /.container -->
+
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -94,26 +160,26 @@
 							<li className={this.props.activeTag=='home'? 'active': ''}>
 								<a className="RedBtn" href="/home">Home</a>
 							</li>
-							<li className={this.props.activeTag=='about'? 'active': ''}>
-								<a className="OrangeBtn" href="/about">About</a>
+							<li className="menuDivider hidden-xs" />
+							<li className={this.props.activeTag=='intro'? 'active': ''}>
+								<a className="OrangeBtn" href="/about">Intro</a>
 							</li>
+							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='service'? 'active': ''}>
 								<a className="YellowBtn" href="/services">Services</a>
 							</li>
+							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='partner'? 'active': ''}>
 								<a className="GreenBtn" href="/partners">Partners</a>
 							</li>
+							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='gallery'? 'active': ''}>
 								<a className="BlueBtn" href="/galleries">Galleries</a>
 							</li>
+							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='contact'? 'active': ''}>
 								<a className="PurpleBtn" href="/contact">Contact</a>
 							</li>
-						</ul>
-						<ul className="nav navbar-nav navbar-right">
-							<li className="nav-divider"></li>
-							<li><a href="#">繁</a></li>
-							<li><a href="#">Eng</a></li>
 						</ul>
 					</div>
 				);
@@ -148,8 +214,8 @@
 				return (
 					<footer>
 						<div className="row">
-							<div className="col-xs-12">
-								<p className="VerseDarkGrey"><strong>Copyright &copy;</strong> Jesus Magician 2015</p>
+							<div className="col-xs-12 text-right">
+								<p className="VerseDarkGrey">Copyright &copy; Jesus Magician Reserved</p>
 								<p className="VerseMediumGrey"><strong>{this.props.data.book}</strong> <cite>{this.props.data.verse}</cite></p>
 							</div>
 						</div>
@@ -158,11 +224,7 @@
 			}
 		});
 
-		ReactDOM.render(
-			<Title cssClass="bs-callout bs-callout-warning" title="Services" />,
-			document.getElementById('title')
-		);
-		
+
 		ReactDOM.render(
 			<Header activeTag="service" />,
 			document.getElementById('header')

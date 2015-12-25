@@ -3,22 +3,28 @@
 	src: url('../fonts/eth_romain_ethon.ttf');
 }
 *{
-	box-sizing: border-box;
+	text-transform: none !important;
 }
 
 body{
 	font-family: eth;
+	background: url('../img/bg-home.png') no-repeat;
+	background-size: cover;
 }
+
 
 #subHeader{
 	height: 121px;
 	width: 100%;
-	background: url('../img/header.png') no-repeat left top, url('../img/header_bg.png') repeat no-repeat;
+	background: url('../img/header.png') no-repeat left top;
 	background-color: transparent;
 	position: fixed;
+	top: 0;
 	z-index:99;
-	pointer-events: none;
+	pointer-events:none;
 }
+
+
 #header{
 	height:82px;
 }
@@ -26,6 +32,33 @@ body{
 	#subHeader{
 		display:none;
 	}
+}
+
+#subHeaderMenu{
+	position: fixed;
+	top:0px;
+	width: 90%;
+	height:30px;
+	margin: 0 auto;
+	z-index: 100;
+}
+.subHeaderMenuItem{
+	width:24px;
+	height:24px;
+	margin-left:20px;
+	margin-top: 3px;
+	float: right;
+	background:grey;
+	display: inline-block;
+}
+#headerFB{
+	background: url('../img/header-fb.png') no-repeat center center
+}
+#headerEmail{
+	background: url('../img/header-email.png') no-repeat center center
+}
+#headerToggleLang{
+	background: url('../img/header-tradC.png') no-repeat center center
 }
 
 .menuDivider{
@@ -79,7 +112,7 @@ body{
 
 
 .navbar-default > .container{
-	margin-left: 308px;
+	margin-left: 290px;
 }
 @media(max-width:991px){
 	.navbar-default > .container{
@@ -89,7 +122,7 @@ body{
 
 
 .navbar-fixed-top{
-    top: 35px;
+    top: 30px;
 	border-width: 0px;
 	z-index: 98;
 }
@@ -132,6 +165,59 @@ body{
     transform: rotate(0);
 }
 
+#blockRow{
+	position: relative;
+	top: -50px;
+	z-index: 3;
+	overflow: visible;
+	margin: 0 auto;
+}
+
+#serviceBanner{
+	width: 1200px;
+	height: 500px;
+	background: url('../img/bg-services.png') no-repeat;
+	background-size: cover;
+}
+
+#serviceContent > h1{
+	color: rgb(190,190,190);
+}
+
+.serviceBlock{
+	background-color: rgb(190,190,190);
+	color: white;
+	background-clip:content-box;
+	margin-top:15px;
+	font-size: 1.2vw;
+		/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;
+	
+}
+
+@media (max-width: 767px){
+	.serviceBlock{
+		font-size: 40px;
+	}
+}
+
 .galleryRow{
 	padding: 0;
 	margin: 0;
@@ -161,6 +247,27 @@ body{
 	margin: auto;
 	z-index: 1;
 }
+
+#carouselContainer{
+	width: 1200px;
+	height: 681px;
+	position: relative;
+	top:20px;
+}
+
+#layerOverCarousel{
+	position: absolute;
+	top: 245px;
+	left:-30px;
+	width: 1300px;
+	height: 431px;
+	z-index: 2;
+	background-color: transparent;
+	background: url('../img/border.png');
+	background-size: contain;
+	pointer-events: none;
+}
+
 .carousel-inner{
 	width: 100%;
 }
@@ -200,10 +307,6 @@ body{
 
 .fade{
 	transition: opacity 1s;
-}
-body{
-	background: url('../img/bg.png') no-repeat center  fixed;
-	background-size: cover;
 }
 
 
@@ -441,17 +544,23 @@ li.active > a:hover{
 .homeBlock{
 	width: 300px;
 	height: 200px;
-	margin: 80px 50px 100px 0;
+	margin: 0px 40px 100px 0;
 	display: inline-block;
 	-webkit-box-reflect: below 0px -webkit-linear-gradient(bottom, rgba(255,255,255,0.3) 0%, transparent 40%, transparent 100%);
 }
-
 @media(max-width:991px){
 	.homeBlock{
 		margin: 80px auto;
 		display:block;
 	}
 }
+@media (min-width: 992px) and (max-width: 1449px){
+	.homeBlock{
+		margin: 0px 10px 100px 0;
+		display:inline-block;
+	}
+} 
+
 
 #introBlock{
 	background: url('../img/icon01.png') no-repeat center center;

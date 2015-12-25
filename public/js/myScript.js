@@ -16,6 +16,9 @@ $(function(){
 			e.preventDefault();
 		});
 	}, 500);
-	
+	$(".serviceBlock").height($(".serviceBlock").width());
+	$(window).resize(function(){
+		$(".serviceBlock").height($(".serviceBlock").width());
+	});
 });
 
