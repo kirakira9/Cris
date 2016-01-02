@@ -10,22 +10,37 @@
     <meta name="author" content="">
 
     <title>Jesus's Magician</title>
-
-    <!-- Bootstrap Core CSS -->
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+	<link rel="icon" href="img/icon.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
 	<link href="css/myStyle.css" rel="stylesheet">
 
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
 <body>
-    <div id="header" style="height: 60px;"></div>
-    <div class="container fade">
-	   <br />
-        <div class="row">
-			<div id="title"></div>
-		
+
+    <!-- Navigation -->
+	<div id="subHeader"></div>
+	<div id="subHeaderMenu" class="hidden-xs hidden-sm">
+		<a id="headerToggleLang" class="subHeaderMenuItem"></a>
+		<a id="headerEmail" href="mailto:magiciancris@ymail.com" class="subHeaderMenuItem"></a>
+		<a id="headerFB" href="https://www.facebook.com/Jesusmagician/" class="subHeaderMenuItem"></a>
+	</div>
+	<div id="header"></div>
+	
+ <!-- Half Page Image Background Carousel Header -->
+ 
+	<div class="container fade">
+		<div id="contactBanner" class="hidden-xs hidden-sm"></div>
+		<div class="row">	
 			<div class="list-group">
 				<a href="#" class="list-group-item disabled">
 				  <div class="row">
@@ -65,10 +80,13 @@
 				</a>
 			</div>		
 		</div> 
-		<hr />
-		<div id="footer"></div>
     </div>
-	<div class="background fade"></div>
+	<br/>
+	<div id="divider"></div>
+	<br/>
+	<div id="footer"></div>
+	<!-- /.container -->
+
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -110,7 +128,6 @@
 							<span className="icon-bar middle-bar"></span>
 							<span className="icon-bar bottom-bar"></span>
 						</button>
-						<a className="navbar-brand" href="#"><img src="./img/facebook.png" /></a>
 					</div>
 				);
 			}
@@ -123,26 +140,26 @@
 							<li className={this.props.activeTag=='home'? 'active': ''}>
 								<a className="RedBtn" href="/home">Home</a>
 							</li>
-							<li className={this.props.activeTag=='about'? 'active': ''}>
-								<a className="OrangeBtn" href="/about">About</a>
+							<li className="menuDivider hidden-xs" />
+							<li className={this.props.activeTag=='intro'? 'active': ''}>
+								<a className="OrangeBtn" href="/about">Intro</a>
 							</li>
+							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='service'? 'active': ''}>
 								<a className="YellowBtn" href="/services">Services</a>
 							</li>
+							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='partner'? 'active': ''}>
 								<a className="GreenBtn" href="/partners">Partners</a>
 							</li>
+							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='gallery'? 'active': ''}>
 								<a className="BlueBtn" href="/galleries">Galleries</a>
 							</li>
+							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='contact'? 'active': ''}>
 								<a className="PurpleBtn" href="/contact">Contact</a>
 							</li>
-						</ul>
-						<ul className="nav navbar-nav navbar-right">
-							<li className="nav-divider"></li>
-							<li><a href="#">繁</a></li>
-							<li><a href="#">Eng</a></li>
 						</ul>
 					</div>
 				);
@@ -177,8 +194,8 @@
 				return (
 					<footer>
 						<div className="row">
-							<div className="col-xs-12">
-								<p className="VerseDarkGrey"><strong>Copyright &copy;</strong> Jesus Magician 2015</p>
+							<div className="col-xs-12 text-right">
+								<p className="VerseDarkGrey">Copyright &copy; Jesus Magician Reserved</p>
 								<p className="VerseMediumGrey"><strong>{this.props.data.book}</strong> <cite>{this.props.data.verse}</cite></p>
 							</div>
 						</div>
@@ -187,11 +204,7 @@
 			}
 		});
 
-		ReactDOM.render(
-			<Title cssClass="bs-callout bs-callout-purple" title="Contact" />,
-			document.getElementById('title')
-		);
-		
+
 		ReactDOM.render(
 			<Header activeTag="contact" />,
 			document.getElementById('header')
@@ -202,6 +215,7 @@
 			document.getElementById('footer')
 		);
 	</script>
+
 
 </body>
 

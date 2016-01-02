@@ -1,41 +1,55 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+
     <title>Jesus's Magician</title>
-    <!-- Bootstrap Core CSS -->
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+	<link rel="icon" href="img/icon.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/blueimp-gallery.min.css" rel="stylesheet">
     <link href="css/bootstrap-image-gallery.min.css" rel="stylesheet">
 	<link href="css/myStyle.css" rel="stylesheet">
+
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
+
 <body>
+
     <!-- Navigation -->
-    <div id="header" style="height: 60px;"></div>
-    <!-- Half Page Image Background Carousel Header -->
-    <!-- Page Content -->
-     <div class="container fade">
-		<br />
+	<div id="subHeader"></div>
+	<div id="subHeaderMenu" class="hidden-xs hidden-sm">
+		<a id="headerToggleLang" class="subHeaderMenuItem"></a>
+		<a id="headerEmail" href="mailto:magiciancris@ymail.com" class="subHeaderMenuItem"></a>
+		<a id="headerFB" href="https://www.facebook.com/Jesusmagician/" class="subHeaderMenuItem"></a>
+	</div>
+	<div id="header"></div>
+	
+ <!-- Half Page Image Background Carousel Header -->
+ 
+	<div class="container fade">
+		<div id="galleryBanner" class="hidden-xs hidden-sm"></div>
 		<div class="row">
-			<div id="title"></div>
 			<div id="links"><div></div></div>
 		</div>
-		
-		<hr/>
-		<!-- Footer -->
-		<div id="footer"></div>	
     </div>
+	<br/>
+	<div id="divider"></div>
+	<br/>
+	<div id="footer"></div>
+	
 	<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-use-bootstrap-modal="false">
     <!-- The container for the modal slides -->
 		<div class="slides"></div>
@@ -69,7 +83,6 @@
 			</div>
 		</div>
 	</div>
-    <div class="background fade"></div>
   
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -127,12 +140,11 @@
 							<span className="icon-bar middle-bar"></span>
 							<span className="icon-bar bottom-bar"></span>
 						</button>
-						<a className="navbar-brand" href="#"><img src="./img/facebook.png" /></a>
 					</div>
 				);
 			}
 		});
-		var Menu = React.createClass({
+			var Menu = React.createClass({
 			render: function(){
 				return(
 					<div className="collapse navbar-collapse" id="menu">
@@ -140,26 +152,26 @@
 							<li className={this.props.activeTag=='home'? 'active': ''}>
 								<a className="RedBtn" href="/home">Home</a>
 							</li>
-							<li className={this.props.activeTag=='about'? 'active': ''}>
-								<a className="OrangeBtn" href="/about">About</a>
+							<li className="menuDivider hidden-xs" />
+							<li className={this.props.activeTag=='intro'? 'active': ''}>
+								<a className="OrangeBtn" href="/about">Intro</a>
 							</li>
+							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='service'? 'active': ''}>
 								<a className="YellowBtn" href="/services">Services</a>
 							</li>
+							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='partner'? 'active': ''}>
 								<a className="GreenBtn" href="/partners">Partners</a>
 							</li>
+							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='gallery'? 'active': ''}>
 								<a className="BlueBtn" href="/galleries">Galleries</a>
 							</li>
+							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='contact'? 'active': ''}>
 								<a className="PurpleBtn" href="/contact">Contact</a>
 							</li>
-						</ul>
-						<ul className="nav navbar-nav navbar-right">
-							<li className="nav-divider"></li>
-							<li><a href="#">繁</a></li>
-							<li><a href="#">Eng</a></li>
 						</ul>
 					</div>
 				);
@@ -194,8 +206,8 @@
 				return (
 					<footer>
 						<div className="row">
-							<div className="col-xs-12">
-								<p className="VerseDarkGrey"><strong>Copyright &copy;</strong> Jesus Magician 2015</p>
+							<div className="col-xs-12 text-right">
+								<p className="VerseDarkGrey">Copyright &copy; Jesus Magician Reserved</p>
 								<p className="VerseMediumGrey"><strong>{this.props.data.book}</strong> <cite>{this.props.data.verse}</cite></p>
 							</div>
 						</div>
@@ -208,10 +220,6 @@
 			<ThumbNailList data={galleryData} />,
 			document.getElementById('links')
 		);		
-		ReactDOM.render(
-			<Title cssClass="bs-callout bs-callout-primary" title="Gallery" />,
-			document.getElementById('title')
-		);
 		
 		ReactDOM.render(
 			<Header activeTag="gallery" />,

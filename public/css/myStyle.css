@@ -180,6 +180,35 @@ body{
 	background-size: cover;
 }
 
+#introBanner{
+	width: 1200px;
+	height: 500px;
+	background: url('../img/bg-intro.png') no-repeat;
+	background-size: cover;
+}
+
+#contactBanner{
+	width: 1200px;
+	height: 500px;
+	background: url('../img/bg-contact.png') no-repeat;
+	background-size: cover;
+}
+
+#partnerBanner{
+	width: 1200px;
+	height: 500px;
+	background: url('../img/bg-partners.png') no-repeat;
+	background-size: cover;
+}
+
+#galleryBanner{
+	width: 1200px;
+	height: 500px;
+	background: url('../img/bg-gallery.png') no-repeat;
+	background-size: cover;
+}
+
+
 #serviceContent > h1{
 	color: rgb(190,190,190);
 }
@@ -216,6 +245,11 @@ body{
 	.serviceBlock{
 		font-size: 40px;
 	}
+}
+
+#introContent{
+	color: rgb(160,160,160);
+	font-size: 18px;
 }
 
 .galleryRow{
