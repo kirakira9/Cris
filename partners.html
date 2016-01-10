@@ -9,7 +9,7 @@
     <title>Jesus's Magician</title>
 	<link rel="icon" href="img/icon.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+	<link rel="stylesheet" href="css/jquery.carousel-3d.default.css" />
 	<link href="css/myStyle.css" rel="stylesheet">
 
 
@@ -37,100 +37,30 @@
  
 	<div class="container fade">
 	    <div id="partnerBanner" class="hidden-xs hidden-sm"></div>
-        <div class="row">
-			<div class="row">
-				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px; height:200px; line-height: 200px">
-						<div class="thumbnail_wrapper">
-							<img src="./img/hkbu_logo.gif" />
-							<h4 class="text-center"><strong>BAPTIST UNIVERSITY</strong></h4>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px; height: 200px; line-height: 200px">
-						<div class="thumbnail_wrapper">
-							<img src="./img/op_logo.gif" />
-							<h4 class="text-center"><strong>OCEAN PARK</strong></h4>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px; height: 200px; line-height: 200px">
-						<div class="thumbnail_wrapper">
-							<img src="./img/syu_logo.png" />
-							<h4 class="text-center"><strong>SHUE YAN UNIVERSITY</strong></h4>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px; height: 200px;line-height: 200px">
-						<div class="thumbnail_wrapper">
-							<img src="./img/langham_logo.jpg" />
-							<h4 class="text-center"><strong>LANGHAM PLACE</strong></h4>
-						</div>
-					</div>
-				</div>
-	
-				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px; height: 200px;line-height: 200px">
-						<div class="thumbnail_wrapper">
-							<img src="./img/dbs_logo.png" />
-							<h4 class="text-center"><strong>DBS BANK</strong></h4>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px; height: 200px;line-height: 200px">
-						<div class="thumbnail_wrapper">
-							<img src="./img/noah_ark_logo.jpg" />
-							<h4 class="text-center"><strong>NOAH'S ARK</strong></h4>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px; height: 200px;line-height: 200px">
-						<div class="thumbnail_wrapper">
-							<img src="./img/harbour_logo.jpg" />
-							<h4 class="text-center"><strong>HARBOUR CITY</strong></h4>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px; height: 200px;line-height: 200px">
-						<div class="thumbnail_wrapper">
-							<img src="./img/siena_logo.jpg" />
-							<h4 class="text-center"><strong>CLUB SIENA</strong></h4>
-						</div>
-					</div>
-				</div>
+		<div id="wrapper">
+			<div id="myCarousel" data-carousel-3d>
+				<img src="img/dbs_logo.png" />
+				<img src="img/syu_logo.png" />
+				<img src="img/noah_ark_logo.png" />
+				<img src="img/op_logo.gif" selected />
+				<img src="img/hkbu_logo.png" />
+				<img src="img/citic_logo.png" />
+				<img src="img/cafe_deco_logo.png" />
 			</div>
-			<hr />
-			
+		</div>
+
+        <div class="row">
+			<h3><b>Other Parners:</b></h3>
 			<div class="row">
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px; height: 80px">
-						<div class="thumbnail_wrapper">
-							<h5 class="text-center">CITIC Ka Wah Bank</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
-						<div class="thumbnail_wrapper">
-							<h5 class="text-center">Cafe Deco</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Top Deck</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px;height: 80px">
+					<div class="thumbnail" style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Dalumi Hong Kong Limited</h5>
 						</div>
@@ -138,28 +68,28 @@
 				</div>
 				
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Resto Restaurant</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">The Pawn</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Paradise Mall</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px;height: 80px">
+					<div class="thumbnail" style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Industrial Evangelistic Fellowship</h5>
 						</div>
@@ -167,28 +97,28 @@
 				</div>
 				
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Lee Chan Yuk Sim Yan Chai Hospital hostels for the elderly</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Regal Riverside Hotel</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Pokfulam government quarters</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px;height: 80px">
+					<div class="thumbnail" style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Christ College</h5>
 						</div>
@@ -196,28 +126,28 @@
 				</div>
 				
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Hong Kong Asian Outreach Light Neighbourhood Centre</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Shatin Residents Association</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Church 611</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px;height: 80px">
+					<div class="thumbnail" style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">THE KWAI TSING DISTRICT COUNCI</h5>
 						</div>
@@ -225,28 +155,28 @@
 				</div>
 				
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Asbury Methodist Social Service</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">The Church of Christ in China Shatin Church</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">SKH Ma On Shan Holy Spirit Primary School</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px;height: 80px">
+					<div class="thumbnail" style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Fanling Government Primary School</h5>
 						</div>
@@ -254,28 +184,28 @@
 				</div>
 				
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Munsang College</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">KIN SANG BAPTIST CHURCH BRADBURY CHILD CARE CENTRE</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Tin Shui Wai Methodist Primary School</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px;height: 80px">
+					<div class="thumbnail" style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">SKH Kei Tak Primary School</h5>
 						</div>
@@ -283,28 +213,28 @@
 				</div>
 				
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Ho Yu College and Primary School</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Ho Yu College and Secondary School</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Concordia Lutheran School - North Point</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px;height: 80px">
+					<div class="thumbnail" style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Buddhist Yip Kei Nam Memorial College</h5>
 						</div>
@@ -312,28 +242,28 @@
 				</div>
 				
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Caritas Chong Yuet Ming Secondary School</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Star Arts Music</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Women 's Association</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px;height: 80px">
+					<div class="thumbnail" style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Hong Kong Workers' Rehabilitation Centre</h5>
 						</div>
@@ -341,21 +271,21 @@
 				</div>
 				
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Chevalier Garden, Ma On Shan</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Mid-Levels East Bamboo Grove</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px;height: 80px">
+					<div class="thumbnail" style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Macau sky clubs</h5>
 						</div>
@@ -363,28 +293,28 @@
 				</div>
 				
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Lake Silver Summit</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Ma Wan Park Island Blue Club</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Ocean Club</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px;height: 80px">
+					<div class="thumbnail" style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Hillsborough Bay Club</h5>
 						</div>
@@ -392,28 +322,28 @@
 				</div>
 				
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Vista Paradiso Club</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">House A3, Sherwoods Bluff</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Mid-East Xiao Lu clubs</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail" style="width: 200px;height: 80px">
+					<div class="thumbnail" style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Siena</h5>
 						</div>
@@ -421,21 +351,21 @@
 				</div>
 				
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Siu Lun Court</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Aberdeen Centre</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<div class="thumbnail"  style="width: 200px;height: 80px">
+					<div class="thumbnail"  style="width: 200px;">
 						<div class="thumbnail_wrapper">
 							<h5 class="text-center">Gold Coast</h5>
 						</div>
@@ -457,6 +387,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.1/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.1/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+	<script src="bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
+	<script src="bower_components/waitForImages/dist/jquery.waitforimages.js"></script>
+	<script src="bower_components/modernizr/modernizr.js"></script>
+	<script src="js/jquery.carousel-3d.js"></script>
 	<script src="js/myScript.js"></script>
 	<script type="text/babel">
 		var verseList = [
