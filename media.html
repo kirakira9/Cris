@@ -12,8 +12,10 @@
     <title>J-Magic</title>
 	<link rel="icon" href="img/icon.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="css/blueimp-gallery.min.css" rel="stylesheet">
+    <link href="css/bootstrap-image-gallery.min.css" rel="stylesheet">
 	<link href="css/myStyle.css" rel="stylesheet">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,72 +36,99 @@
 		<a id="headerFB" href="https://www.facebook.com/Jesusmagician/" class="subHeaderMenuItem"></a>
 	</div>
 	<div id="header"></div>
-    <!-- Half Page Image Background Carousel Header -->
+	
+ <!-- Half Page Image Background Carousel Header -->
+ 
 	<div class="container fade">
-		<div id="carouselContainer" class="hidden-xs hidden-sm">
-			<header id="myCarousel" class="carousel slide" data-interval="3000">
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
-				</ol>
-
-				<!-- Wrapper for Slides -->
-				<div class="carousel-inner">
-					<div class="item active billboard1">
-					</div>
-					<div class="item billboard2">
-					</div>
-					<div class="item billboard3">
-					</div>
-				</div>
-
-				<!-- Controls -->
-				<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-					<span class="icon-prev"></span>
-				</a>
-				<a class="right carousel-control" href="#myCarousel" data-slide="next">
-					<span class="icon-next"></span>
-				</a>
-			</header>
-			<div id="layerOverCarousel"></div>
+		<div id="galleryBanner" class="hidden-xs hidden-sm"></div>
+		<div class="row">
+			<div id="links"><div></div></div>
 		</div>
-    <!-- Page Content -->
-    
-	   <br />
-		<div id="blockRow" class="row">
-			<iframe class="homeBlock" src="https://www.youtube.com/embed/y93Ihlr8qYI?autoplay=1" frameborder="0" allowfullscreen></iframe>
-			<a id="introBlock" href="/about" class="homeBlock"></a>
-			<a id="serviceBlock" href="/services" class="homeBlock"></a>
-			<a id="galleryBlock" href="/media" class="homeBlock"></a>
-		</div>
-		<br />
     </div>
+	<br/>
 	<div id="divider"></div>
 	<br/>
 	<div id="footer"></div>
-    <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 	
-	<script src="js/myScript.js"></script>
+	<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-use-bootstrap-modal="false">
+    <!-- The container for the modal slides -->
+		<div class="slides"></div>
+		<!-- Controls for the borderless lightbox -->
+		<h3 class="title"></h3>
+		<a class="prev">‹</a>
+		<a class="next">›</a>
+		<a class="close">×</a>
+		<a class="play-pause"></a>
+		<ol class="indicator"></ol>
+		<!-- The modal dialog, which will be used to wrap the lightbox content -->
+		<div class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" aria-hidden="true">&times;</button>
+						<h4 class="modal-title"></h4>
+					</div>
+					<div class="modal-body next"></div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default pull-left prev">
+							<i class="glyphicon glyphicon-chevron-left"></i>
+							Previous
+						</button>
+						<button type="button" class="btn btn-primary next">
+							Next
+							<i class="glyphicon glyphicon-chevron-right"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.blueimp-gallery.min.js"></script>
+    <script src="js/bootstrap-image-gallery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.1/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.1/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="js/myScript.js"></script>
 	<script type="text/babel">
+		var galleryData = [];
+
 		var verseList = [
 			{ book: "Psalm 23:4", verse: "Even though I walk through the darkest valley, I will fear no evil, for you are with me"},
 			{ book: "Matthew 24:36", verse: "But about that day or hour no one knows, not even the angels in heaven, nor the Son, but only the Father"},
 			{ book: "John 15:24", verse: " If I had not done among them the works no one else did, they would not be guilty of sin"}
 		];
 
-
+		var ThumbNail = React.createClass({
+			render: function(){
+				return (<a href={this.props.data.bigURL} title={this.props.data.title} data-gallery=""><img src={this.props.data.smallURL} /></a>);
+			}
+		});
 		var randomVerseID = Math.floor((Math.random()*verseList.length));
+
+		var ThumbNailList = React.createClass({
+			getInitialState: function() {
+				return { galleryList : undefined };
+			},
+			componentWillMount: function() {
+				$.get("/getGalleryContent", function(result) {
+					this.setState({galleryList: result});
+				}.bind(this));
+			},
+			render: function(){
+				if ( !this.state.galleryList ) {       
+					return false;
+				}
+				var galleryList = this.state.galleryList.map(function(gallery){
+					return (<ThumbNail data={gallery} />);
+				});				
+				return (
+					<div>{galleryList}</div>
+				);
+			}
+		});
 
 		var CollapseBtn = React.createClass({
 			render: function(){
@@ -114,7 +143,7 @@
 				);
 			}
 		});
-		var Menu = React.createClass({
+			var Menu = React.createClass({
 			render: function(){
 				return(
 					<div className="collapse navbar-collapse" id="menu">
@@ -148,15 +177,6 @@
 			}
 		});
 
-		var HomeBlock = React.createClass({
-			render: function(){
-				return (
-					<div className="col-md-4" id={this.props.id}>
-					</div>
-				);
-			}
-		});
-		
 		var Title = React.createClass({
 			render: function(){
 				return (
@@ -195,9 +215,13 @@
 			}
 		});
 
-	
 		ReactDOM.render(
-			<Header activeTag="home" />,
+			<ThumbNailList data={galleryData} />,
+			document.getElementById('links')
+		);		
+		
+		ReactDOM.render(
+			<Header activeTag="media" />,
 			document.getElementById('header')
 		);
 
@@ -207,5 +231,4 @@
 		);
 	</script>
 </body>
-
 </html>

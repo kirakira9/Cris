@@ -6,16 +6,59 @@ var fh = require('./readContent.js');
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8080);
 app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
 
+app.get('/getIntroContent', function(req,res){
+	res.writeHead(200, {'content-type': 'text/json' });
+	if(req.query.lang == "cn"){
+		res.write( JSON.stringify(fh.getIntroContent('./files/intro_CN.txt')));
+	}
+	else{
+		res.write( JSON.stringify(fh.getIntroContent('./files/intro_EN.txt')));
+	}
+	res.end('\n');
+});
+
+app.get('/getServiceContent', function(req,res){
+	res.writeHead(200, {'content-type': 'text/json' });
+	if(req.query.lang == "cn"){
+		res.write( JSON.stringify(fh.getServiceContent('./files/service_CN.txt')));
+	}
+	else{
+		res.write( JSON.stringify(fh.getServiceContent('./files/service_EN.txt')));
+	}
+	res.end('\n');
+});
+
+app.get('/getGalleryContent', function(req,res){
+	res.writeHead(200, {'content-type': 'text/json' });
+	
+	res.write( JSON.stringify(fh.getGalleryContent('./files/gallery.txt')));
+
+	res.end('\n');
+});
+
+app.get('/getSponsorContent', function(req,res){
+	res.writeHead(200, {'content-type': 'text/json' });
+	if(req.query.lang == "cn"){
+		res.write( JSON.stringify(fh.getSponsorContent('./files/sponsor_CN.txt')));
+	}
+	else{
+		res.write( JSON.stringify(fh.getSponsorContent('./files/sponsor_EN.txt')));
+	}
+	res.end('\n');
+});
+
+
+
 app.get('/', function(req,res){
 	res.sendFile('/home.html', {root: __dirname});
 });
 
 app.get('/home', function(req,res){
-	console.log(fh.getHomeContent('./files/test.txt'));
 	res.sendFile('/home.html', {root:__dirname});
 });
 
 app.get('/about', function(req,res){
+	
 	res.sendFile('/about.html', {root:__dirname});
 });
 
@@ -31,8 +74,8 @@ app.get('/partners', function(req,res){
 	res.sendFile('/partners.html', {root:__dirname});
 });
 
-app.get('/galleries', function(req,res){
-	res.sendFile('/galleries.html', {root: __dirname});
+app.get('/media', function(req,res){
+	res.sendFile('/media.html', {root: __dirname});
 });
 
 

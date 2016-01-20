@@ -48,7 +48,6 @@ body{
 	margin-left:20px;
 	margin-top: 3px;
 	float: right;
-	background:grey;
 	display: inline-block;
 }
 #headerFB{
@@ -57,9 +56,15 @@ body{
 #headerEmail{
 	background: url('../img/header-email.png') no-repeat center center
 }
-#headerToggleLang{
+#headerToggleLang.langCN{
+	cursor: pointer;
 	background: url('../img/header-tradC.png') no-repeat center center
 }
+#headerToggleLang.langEN{
+	cursor: pointer;
+	background: url('../img/header-eng.png') no-repeat center center
+}
+
 
 .menuDivider{
 	width: 1px;
@@ -204,7 +209,7 @@ body{
 #galleryBanner{
 	width: 1200px;
 	height: 500px;
-	background: url('../img/bg-gallery.png') no-repeat;
+	background: url('../img/bg-media.png') no-repeat;
 	background-size: cover;
 }
 
@@ -219,7 +224,7 @@ body{
 	background-clip:content-box;
 	margin-top:15px;
 	font-size: 1.2vw;
-		/* Internet Explorer 10 */
+	/* Internet Explorer 10 */
 	display:-ms-flexbox;
 	-ms-flex-pack:center;
 	-ms-flex-align:center;
@@ -267,7 +272,7 @@ body{
 }
 
 .glyphicon-facebook{
-	background: url('../img/facebook.png') no-repeat center center fixed;
+	background: url('../img/header-fb.png') no-repeat center center fixed;
 }
 
 .media  img{
@@ -416,85 +421,6 @@ a.list-group-item .row{
 	color: #555555;	
 }
 
-/*
-
-li > a:hover{
-	background-color: #777 !important;
-	color: white !important;
-	transition: all 0.3s ease;
-}
-
-li.active > a:hover{
-	background-color:#434A54 !important;
-	cursor: default;
-}
-
-.active > .RedBtn{
-	color: #d9534f !important;
-}
-
-:not(.active)> .RedBtn:hover{
-	color: #f8f8f8 !important;
-	background-color: #d9534f !important;
-	box-shadow: inset 0px 5px 5px 0px #ed5565;
-	transition: background-color 0.3s, color 0.3s;
-}
-
-.active > .OrangeBtn{
-	color: #fa6800 !important;
-}
-
-:not(.active)> .OrangeBtn:hover{
-	color: #f8f8f8 !important;
-	background-color: #fa6800 !important;
-	box-shadow: inset 0px 5px 5px 0px #f0a30a;
-	transition: background-color 0.3s, color 0.3s;
-}
-
-.active > .YellowBtn{
-	color: #f6bb42 !important;
-}
-
-:not(.active)> .YellowBtn:hover{
-	color: #f8f8f8 !important;
-	background-color: #f6bb42 !important;
-	box-shadow: inset 0px 5px 5px 0px #ffce54;
-	transition: background-color 0.3s, color 0.3s;
-}
-
-.active > .BlueBtn{
-	color: #428bca !important;
-}
-
-:not(.active)> .BlueBtn:hover{
-	color: #f8f8f8 !important;
-	background-color: #428bca !important;
-	box-shadow: inset 0px 5px 5px 0px #5d9cec;
-	transition: background-color 0.3s, color 0.3s;
-}
-
-.active > .GreenBtn{
-	color: #5cb85c !important;
-}
-
-:not(.active)> .GreenBtn:hover{
-	color: #f8f8f8 !important;
-	background-color: #5cb85c !important;
-	box-shadow: inset 0px 5px 5px 0px #a0d468;
-	transition: background-color 0.3s, color 0.3s;
-}
-
-.active > .PurpleBtn{
-	color: #d770ad !important;
-}
-
-:not(.active)> .PurpleBtn:hover{
-	color: #f8f8f8 !important;
-	background-color: #d770ad !important;
-	box-shadow: inset 0px 5px 5px 0px #ec87c0;
-	transition: background-color 0.3s, color 0.3s;
-}
-*/
 .bs-callout {
     padding: 20px;
     margin: 20px 0;
@@ -576,8 +502,8 @@ li.active > a:hover{
 }
 
 .homeBlock{
-	width: 300px;
-	height: 200px;
+	width: 450px;
+	height: 300px;
 	margin: 0px 40px 100px 0;
 	display: inline-block;
 	-webkit-box-reflect: below 0px -webkit-linear-gradient(bottom, rgba(255,255,255,0.3) 0%, transparent 40%, transparent 100%);
@@ -597,55 +523,61 @@ li.active > a:hover{
 
 
 #introBlock{
-	background: url('../img/icon01.png') no-repeat center center;
-	background-size: contain;
-	-webkit-transition: all 1s ease;
-    transition: all 1s ease;
+	background-image: url('../img/icon01-mouseover.png'),url('../img/icon01.png');
+	background-repeat: no-repeat, no-repeat;
+	background-position: center, center;
+	background-size: contain,contain;
+	-webkit-transition: all .5s ease;
+    transition: all .5s ease;
 }
 	#introBlock:hover{
 		background-image: url('../img/icon01-mouseover.png'), url('../img/icon01.png');
 		background-repeat: no-repeat, no-repeat;
 		background-position: center, center;
 		background-size: contain,contain;
-		opacity: 0.8;
+		opacity: 0.7;
 		cursor: pointer;
-		-webkit-transition: all 1s ease;
-		transition: all 1s ease;
+		-webkit-transition: all .5s ease;
+		transition: all .5s ease;
 	}
 
 	
 #serviceBlock{
-	background: url('../img/icon02.png') no-repeat center center;
-	background-size: contain;
-	-webkit-transition: all 1s ease;
-    transition: all 1s ease;
+	background-image: url('../img/icon02-mouseover.png'), url('../img/icon02.png');
+	background-repeat: no-repeat, no-repeat;
+	background-position: center, center;
+	background-size: contain,contain;
+	-webkit-transition: all .5s ease;
+		transition: all .5s ease;
 }
 	#serviceBlock:hover{
 		background-image: url('../img/icon02-mouseover.png'), url('../img/icon02.png');
 		background-repeat: no-repeat, no-repeat;
 		background-position: center, center;
 		background-size: contain,contain;
-		opacity: 0.8;
+		opacity: 0.7;
 		cursor: pointer;
-		-webkit-transition: all 1s ease;
-		transition: all 1s ease;
+		-webkit-transition: all .5s ease;
+		transition: all .5s ease;
 	}
 
 #galleryBlock{
-	background: url('../img/icon03.png') no-repeat center center;
-	background-size: contain;
-	-webkit-transition: all 1s ease;
-    transition: all 1s ease;
+	background-image: url('../img/icon03-mouseover.png'), url('../img/icon03.png');
+	background-repeat: no-repeat, no-repeat;
+	background-position: center, center;
+	background-size: contain,contain;
+	-webkit-transition: all .5s ease;
+	transition: all .5s ease;
 }
 	#galleryBlock:hover{
 		background-image: url('../img/icon03-mouseover.png'), url('../img/icon03.png');
 		background-repeat: no-repeat, no-repeat;
 		background-position: center, center;
 		background-size: contain,contain;
-		opacity: 0.8;
+		opacity: 0.7;
 		cursor: pointer;
-		-webkit-transition: all 1s ease;
-		transition: all 1s ease;
+		-webkit-transition: all .5s ease;
+		transition: all .5s ease;
 	}
 
 #divider{

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Jesus's Magician</title>
+    <title>J-Magic</title>
 	<link rel="icon" href="img/icon.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -71,6 +71,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.1/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 	<script src="js/myScript.js"></script>
+	<script>
+		$.ajax({
+				url: "/getIntroContent",
+				method: "GET",
+				dataType: "json",
+				data: {lang : localStorage.lang},
+				success: function(data){
+					$("#introContent").html(data[0]);
+				}
+			});
+		
+	</script>
 	<script type="text/babel">
 		var verseList = [
 			{ book: "Psalm 23:4", verse: "Even though I walk through the darkest valley, I will fear no evil, for you are with me"},
@@ -130,8 +142,8 @@
 								<a className="GreenBtn" href="/partners">Partners</a>
 							</li>
 							<li className="menuDivider hidden-xs" />
-							<li className={this.props.activeTag=='gallery'? 'active': ''}>
-								<a className="BlueBtn" href="/galleries">Galleries</a>
+							<li className={this.props.activeTag=='media'? 'active': ''}>
+								<a className="BlueBtn" href="/media">Media</a>
 							</li>
 							<li className="menuDivider hidden-xs" />
 							<li className={this.props.activeTag=='contact'? 'active': ''}>
@@ -172,7 +184,7 @@
 					<footer>
 						<div className="row">
 							<div className="col-xs-12 text-right">
-								<p className="VerseDarkGrey">Copyright &copy; Jesus Magician Reserved</p>
+								<p className="VerseDarkGrey">Copyright &copy; J-Magic Reserved</p>
 								<p className="VerseMediumGrey"><strong>{this.props.data.book}</strong> <cite>{this.props.data.verse}</cite></p>
 							</div>
 						</div>

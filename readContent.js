@@ -1,6 +1,50 @@
 "use strict";
 var fs = require('fs');
 
-exports.getHomeContent = function(dir){
-	return fs.readFileSync(dir, 'utf-8');
+exports.getIntroContent = function(dir){
+	var content = fs.readFileSync(dir, 'utf-8');
+	var res = content.split("#");
+	var ret = {};
+	for(var key in res){
+		ret[key] = res[key];
+	}
+	return ret;
+}
+
+exports.getServiceContent = function(dir){
+	var content = fs.readFileSync(dir, 'utf-8');
+	var res = content.split("#");
+	var ret = [];
+	for(var key in res){
+		var obj = {}
+		obj["content"] = res[key];
+		ret.push(obj);
+	}
+	return ret;
+}
+
+exports.getGalleryContent = function(dir){
+	var content = fs.readFileSync(dir, 'utf-8');
+	var res = content.split("#");
+	var ret = [];
+	for(var i=0; i<res.length; i+=3){
+		var obj = {}
+		obj["smallURL"] = res[i];
+		obj["bigURL"] = res[i+1];
+		obj["title"] = res[i+2];
+		ret.push(obj);
+	}
+	return ret;
+}
+
+exports.getSponsorContent = function(dir){
+	var content = fs.readFileSync(dir, 'utf-8');
+	var res = content.split("#");
+	var ret = [];
+	for(var key in res){
+		var obj = {}
+		obj["sponsorName"] = res[key];
+		ret.push(obj);
+	}
+	return ret;
 }
