@@ -206,7 +206,7 @@ body{
 	background-size: cover;
 }
 
-#galleryBanner{
+#mediaBanner{
 	width: 1200px;
 	height: 500px;
 	background: url('../img/bg-media.png') no-repeat;
@@ -590,4 +590,34 @@ a.list-group-item .row{
 #footer{
 	margin: auto;
 	width: 90%;
+}
+
+.mediaToVideo, .mediaToGallery{
+	display: inline-block;
+	font-size: 40px;
+	width: 100%;
+	margin: -15px;
+	padding: 15px;
+}
+.mediaToGallery{
+	display:none;
+}
+
+.btnMediaToVideo, .btnMediaToGallery{
+	cursor: pointer;
+}
+#videoTab, #galleryTab{
+	position: relative;
+}
+
+#videoTab{
+	opacity: 0;
+	width: 100%;
+}
+
+.video{
+	width: 350px;
+	height: 225px;
+	margin-top: 30px;
+	margin-left: 30px;
 }

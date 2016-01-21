@@ -36,6 +36,14 @@ app.get('/getGalleryContent', function(req,res){
 	res.end('\n');
 });
 
+app.get('/getVideoContent', function(req,res){
+	res.writeHead(200, {'content-type': 'text/json' });
+	
+	res.write( JSON.stringify(fh.getVideoContent('./files/video.txt')));
+
+	res.end('\n');
+});
+
 app.get('/getSponsorContent', function(req,res){
 	res.writeHead(200, {'content-type': 'text/json' });
 	if(req.query.lang == "cn"){

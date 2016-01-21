@@ -89,25 +89,8 @@
 			{ book: "Matthew 24:36", verse: "But about that day or hour no one knows, not even the angels in heaven, nor the Son, but only the Father"},
 			{ book: "John 15:24", verse: " If I had not done among them the works no one else did, they would not be guilty of sin"}
 		];
-
-		var ThumbNail = React.createClass({
-			render: function(){
-				return (<a href={this.props.data.bigURL} title={this.props.data.title} data-gallery=""><img src={this.props.data.smallURL} /></a>);
-			}
-		});
 		var randomVerseID = Math.floor((Math.random()*verseList.length));
-
-		var ThumbNailList = React.createClass({
-			render: function(){
-				var galleryList = this.props.data.map(function(gallery){
-					return (<ThumbNail data={gallery} />);
-				});				
-				return (
-					<div>{galleryList}</div>
-				);
-			}
-		});
-
+		
 		var CollapseBtn = React.createClass({
 			render: function(){
 				return (

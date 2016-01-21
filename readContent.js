@@ -37,6 +37,19 @@ exports.getGalleryContent = function(dir){
 	return ret;
 }
 
+exports.getVideoContent = function(dir){
+	var content = fs.readFileSync(dir, 'utf-8');
+	var res = content.split("#");
+	var ret = [];
+	for(var i=0; i<res.length; i++){
+		var obj = {}
+		obj["url"] = res[i];
+		ret.push(obj);
+	}
+	return ret;
+}
+
+
 exports.getSponsorContent = function(dir){
 	var content = fs.readFileSync(dir, 'utf-8');
 	var res = content.split("#");
