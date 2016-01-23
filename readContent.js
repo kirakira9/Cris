@@ -61,3 +61,16 @@ exports.getSponsorContent = function(dir){
 	}
 	return ret;
 }
+
+exports.getVerseContent = function(dir){
+	var content = fs.readFileSync(dir, 'utf-8');
+	var res = content.split("#");
+	var ret= [];
+	for(var i=0; i<res.length; i+=2){
+		var obj = {}
+		obj["book"] = res[i];
+		obj["verse"]=res[i+1];
+		ret.push(obj);
+	}
+	return ret;
+}

@@ -42,6 +42,7 @@
  
 	<div class="container fade">
 		<div id="mediaBanner" class="hidden-xs hidden-sm"></div>
+		<div class="bs-callout bs-callout-primary visible-xs visible-sm"><h2>Media</h2></div>
 		<span class="text-right mediaToVideo">VIDEO <i class="fa fa-chevron-circle-right fa-4 btnMediaToVideo"></i></span>
 		<span class="text-left mediaToGallery"><i class="fa fa-chevron-circle-left fa-4 btnMediaToGallery"></i> GALLERY</span>
 		<div class="row" style="overflow:hidden; position:relative;">
@@ -100,15 +101,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     <script src="js/myScript.js"></script>
 	<script type="text/babel">
-		var galleryData = [];
-
-		var verseList = [
-			{ book: "Psalm 23:4", verse: "Even though I walk through the darkest valley, I will fear no evil, for you are with me"},
-			{ book: "Matthew 24:36", verse: "But about that day or hour no one knows, not even the angels in heaven, nor the Son, but only the Father"},
-			{ book: "John 15:24", verse: " If I had not done among them the works no one else did, they would not be guilty of sin"}
-		];
-		var randomVerseID = Math.floor((Math.random()*verseList.length));
-		
 		var ThumbNail = React.createClass({
 			render: function(){
 				return (<a href={this.props.data.bigURL} title={this.props.data.title} data-gallery=""><img src={this.props.data.smallURL} /></a>);
@@ -140,7 +132,7 @@
 		
 		var Video = React.createClass({
 			render: function(){
-				return (<iframe className="video" src={this.props.data.url} frameBorder="5" allowFullScreen></iframe>);
+				return (<iframe className="videoClip" src={this.props.data.url} frameBorder="5" allowFullScreen></iframe>);
 			}
 		});
 
@@ -171,6 +163,10 @@
 			render: function(){
 				return (
 					<div className="navbar-header">
+						<span className="navbar-brand visible-xs">
+							<img style={{display: "inline-block !important"}} alt="Brand" src="img/icon.png" height="40px" />
+							<span>  J-Magic</span>
+						</span>
 						<button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
 							<span className="icon-bar top-bar"></span>
 							<span className="icon-bar middle-bar"></span>
@@ -180,7 +176,7 @@
 				);
 			}
 		});
-			var Menu = React.createClass({
+		var Menu = React.createClass({
 			render: function(){
 				return(
 					<div className="collapse navbar-collapse" id="menu">
@@ -252,6 +248,30 @@
 			}
 		});
 
+		var VerseSource = React.createClass({
+			getInitialState: function() {
+				return { verseList: undefined };
+			},
+
+			componentWillMount: function() {
+				$.get("/getVerseContent",{lang : localStorage.lang},  function(result) {
+					this.setState({verseList: result});
+				}.bind(this));
+			},
+			render: function(){
+				if ( !this.state.verseList ) {       
+					return false;
+				}
+				
+				var randomVerseID = Math.floor((Math.random()*this.state.verseList.length));
+				var randomVerse = this.state.verseList[randomVerseID];
+
+				return (
+					<Footer data={randomVerse}/>
+				);
+			}
+		});
+		
 		ReactDOM.render(
 			<ThumbNailList/>,
 			document.getElementById('links')
@@ -268,7 +288,7 @@
 		);
 
 		ReactDOM.render(
-			<Footer data={verseList[randomVerseID]}/>,
+			<VerseSource />,
 			document.getElementById('footer')
 		);
 	</script>

@@ -6,6 +6,17 @@ var fh = require('./readContent.js');
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8080);
 app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
 
+app.get('/getVerseContent', function(req,res){
+	res.writeHead(200, {'content-type': 'text/json' });
+	if(req.query.lang == "cn"){
+		res.write( JSON.stringify(fh.getVerseContent('./files/verse_CN.txt')));
+	}
+	else{
+		res.write( JSON.stringify(fh.getVerseContent('./files/verse_EN.txt')));
+	}
+	res.end('\n');
+});
+
 app.get('/getIntroContent', function(req,res){
 	res.writeHead(200, {'content-type': 'text/json' });
 	if(req.query.lang == "cn"){

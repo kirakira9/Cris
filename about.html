@@ -40,6 +40,7 @@
  
 	<div class="container fade">
 		<div id="introBanner" class="hidden-xs hidden-sm"></div>
+		<div class="bs-callout bs-callout-primary visible-xs visible-sm"><h2>Intro</h2></div>
 		<div id="introContent">
 			<p>Local professional magician, 10 years of experience for performance. Involved in performing arts, MC and classes teaching, including the birthday shows (magic tracks, balloon twisting and juggling), wedding parties, variety shows, etc. Be interviewed by magazines and newspapers.</p>
 			<br>
@@ -84,17 +85,14 @@
 		
 	</script>
 	<script type="text/babel">
-		var verseList = [
-			{ book: "Psalm 23:4", verse: "Even though I walk through the darkest valley, I will fear no evil, for you are with me"},
-			{ book: "Matthew 24:36", verse: "But about that day or hour no one knows, not even the angels in heaven, nor the Son, but only the Father"},
-			{ book: "John 15:24", verse: " If I had not done among them the works no one else did, they would not be guilty of sin"}
-		];
-		var randomVerseID = Math.floor((Math.random()*verseList.length));
-		
 		var CollapseBtn = React.createClass({
 			render: function(){
 				return (
 					<div className="navbar-header">
+						<span className="navbar-brand visible-xs">
+							<img style={{display: "inline-block !important"}} alt="Brand" src="img/icon.png" height="40px" />
+							<span>  J-Magic</span>
+						</span>
 						<button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
 							<span className="icon-bar top-bar"></span>
 							<span className="icon-bar middle-bar"></span>
@@ -148,6 +146,31 @@
 			}
 		});
 
+		
+		var VerseSource = React.createClass({
+			getInitialState: function() {
+				return { verseList: undefined };
+			},
+
+			componentWillMount: function() {
+				$.get("/getVerseContent",{lang : localStorage.lang},  function(result) {
+					this.setState({verseList: result});
+				}.bind(this));
+			},
+			render: function(){
+				if ( !this.state.verseList ) {       
+					return false;
+				}
+				
+				var randomVerseID = Math.floor((Math.random()*this.state.verseList.length));
+				var randomVerse = this.state.verseList[randomVerseID];
+
+				return (
+					<Footer data={randomVerse}/>
+				);
+			}
+		});
+		
 		var Header = React.createClass({
 			render: function(){
 				return(
@@ -183,7 +206,7 @@
 		);
 
 		ReactDOM.render(
-			<Footer data={verseList[randomVerseID]}/>,
+			<VerseSource />,
 			document.getElementById('footer')
 		);
 	</script>

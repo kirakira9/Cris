@@ -43,6 +43,10 @@ $(function(){
 	$(".serviceBlock").height($(".serviceBlock").width());
 	$(window).resize(function(){
 		$(".serviceBlock").height($(".serviceBlock").width());
+		var $contactLogo = $(".contact_logo > img");
+		if($contactLogo){
+			$contactLogo.width("100%");
+		}
 	});
 	
 	$(".btnMediaToVideo").on("click", function(){

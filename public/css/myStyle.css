@@ -12,7 +12,19 @@ body{
 	background-size: cover;
 }
 
+.navbar-brand {
+	padding: 0;        
+}
 
+.navbar-brand > span{
+	color: white !important;
+}
+
+.navbar-brand img {
+	margin-top: 5px;
+	margin-left: 10px;
+}
+	
 #subHeader{
 	height: 121px;
 	width: 100%;
@@ -248,7 +260,7 @@ body{
 
 @media (max-width: 767px){
 	.serviceBlock{
-		font-size: 40px;
+		font-size: 30px;
 	}
 }
 
@@ -615,9 +627,53 @@ a.list-group-item .row{
 	width: 100%;
 }
 
-.video{
+.videoClip{
 	width: 350px;
 	height: 225px;
 	margin-top: 30px;
 	margin-left: 30px;
+}
+
+.contact_row{
+	height: 110px;
+	line-height: 110px;
+	font-size: 55px;
+	font-weight: bold;
+	margin-top: 30px;
+	padding: 0px;
+}
+.contact_row > div{
+	height: 100%;
+}
+.contact_row_content{
+	font-size: 40px;
+}
+.contact_row_logo{
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+.contact_row_content{
+	background-repeat: no-repeat;
+	background-position: left;
+	background-size: contain;
+}
+
+.contact_row_logo.phone{
+	background-image: url('../img/icon-contact01.png');
+}
+.contact_row_logo.email{
+	background-image: url('../img/icon-contact02.png');
+}
+@media(max-width:991px){
+	.contact_row_content.email{
+		font-size:30px;
+	}
+}
+
+.contact_row_logo.facebookLogo{
+	background-image: url('../img/icon-contact03.png');
+}
+.contact_row_content.facebook{
+	background-image: url('../img/icon-contact04.png');
 }
