@@ -669,8 +669,18 @@ a.list-group-item .row{
 	.contact_row_content.email{
 		font-size:30px;
 	}
+	.contact_row_content.phone{
+		font-size:30px;
+	}
 }
-
+@media(max-width:450px){
+	.contact_row_content.email{
+		font-size:15px;
+	}
+	.contact_row_content.phone{
+		font-size:20px;
+	}
+}
 .contact_row_logo.facebookLogo{
 	background-image: url('../img/icon-contact03.png');
 }
